@@ -1,28 +1,28 @@
-way[highway][name =~ /(?i)(marsz|ks|gen|inĹź|prof|kard|pl|ul|bp|pĹk|ppĹk|kpt|dr|Ĺw|os)[.]? .*$/] {
-  throwWarning: tr("SkrĂłt w nazwie ulicy");
+way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|dr|św|os)[.]? .*$/] {
+  throwWarning: tr("Skrót w nazwie ulicy");
 
 }
 
-*["addr:street" =~ /(?i)(marsz|ks|gen|inĹź|prof|kard|pl|ul|bp|pĹk|ppĹk|kpt|dr|Ĺw|os)[.]? .*$/] {
-  throwWarning: tr("SkrĂłt w nazwie ulicy");
+*["addr:street" =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|dr|św|os)[.]? .*$/] {
+  throwWarning: tr("Skrót w nazwie ulicy");
 }
 
  
 *[name *= "-go "], *["addr:street" *= "-go "]   {
-  throwWarning: tr("NiewĹaĹciwa forma liczebnika");
+  throwWarning: tr("Niewłaściwa forma liczebnika");
 }
 
-*[name *= "Curie-SkĹodowskiej"], *["addr:street" *= "Curie-SkĹodowskiej"]   {
-  throwWarning: tr("Niepoprawna kolejnoĹÄ nazwisk");
+*[name *= "Curie-Skłodowskiej"], *["addr:street" *= "Curie-Skłodowskiej"]   {
+  throwWarning: tr("Niepoprawna kolejność nazwisk");
 }
 
 *[addr:city][addr:place][addr:housenumber] {
-  throwWarning: tr("addr:city jest zbÄdne w poĹÄczeniu z addr:place");
+  throwWarning: tr("addr:city jest zbędne w połączeniu z addr:place");
   }
   
   
 *[addr:street][addr:place][addr:housenumber] {
-  throwWarning: tr("addr:street nie powinno wystÄpowaÄ z addr:place");
+  throwWarning: tr("addr:street nie powinno występować z addr:place");
   }
 
 *["addr:country" *= "PL"]   {
@@ -30,9 +30,9 @@ way[highway][name =~ /(?i)(marsz|ks|gen|inĹź|prof|kard|pl|ul|bp|pĹk|ppĹk
 }
 
 *[addr:housenumber][addr:street][!addr:city] {
-  throwWarning: tr("BrakujÄcy tag addr:city");
+  throwWarning: tr("Brakujący tag addr:city");
 }
 
 *[addr:street]["addr:housenumber" *= "996"], *["addr:housenumber" *= "b.n."], *["addr:housenumber" *= "brak"], *["addr:housenumber" *= "brak_nr"]  {
-  throwWarning: tr("Prawdopodnie nieprawidĹowy numer domu");
+  throwWarning: tr("Prawdopodnie nieprawidłowy numer domu");
 }
