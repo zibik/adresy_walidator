@@ -17,7 +17,7 @@ way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|d
 }
 
 *[addr:city][addr:place][addr:housenumber] {
-  throwWarning: tr("addr:city jest zbędne w połączeniu z addr:place");
+  throwWarning: tr("addr:city zwykle jest zbędne w połączeniu z addr:place");
   }
   
   
