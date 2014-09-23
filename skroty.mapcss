@@ -33,6 +33,11 @@ way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|d
   throwWarning: tr("Brakujący tag addr:city");
 }
 
+
 *[addr:street]["addr:housenumber" *= "996"], *["addr:housenumber" *= "b.n."], *["addr:housenumber" *= "brak"], *["addr:housenumber" *= "brak_nr"]  {
   throwWarning: tr("Prawdopodnie nieprawidłowy numer domu");
+}
+
+*[is_in]   {
+  throwWarning: tr("Przestarzały tag is_in");
 }
