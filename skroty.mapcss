@@ -41,3 +41,7 @@ way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|d
 *[is_in]   {
   throwWarning: tr("Przestarzały tag is_in");
 }
+
+*["is_in:country" *= "Poland"]   {
+  throwWarning: tr("Nadmiarowy tag is_in:country");
+}
