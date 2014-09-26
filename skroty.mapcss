@@ -7,7 +7,7 @@ way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|d
   throwWarning: tr("Skrót w nazwie ulicy");
 }
 
-*["addr:street" =~ /(?i)(A|B|C|D|E|F|G|H|I|J|K|L|Ł|M|N|O|P|R|S|T|U|W|X|Z)[.]? .*$/] {
+*["addr:street" =~ /(?i)(^[A-Ż])[.]? /] {
   throwWarning: tr("Skrót imienia w nazwie ulicy");
 }
  
