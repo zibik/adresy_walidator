@@ -19,6 +19,10 @@ way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|d
   throwWarning: tr("Niepoprawna kolejność nazwisk");
 }
 
+*["addr:street" =~ /(?iu)(\s+)[.]? /] {
+throwWarning: tr("Nadmiarowe spacje w adresie");
+}
+
 *[addr:city][addr:place][addr:housenumber] {
   throwWarning: tr("addr:city zwykle jest zbędne w połączeniu z addr:place");
   }
