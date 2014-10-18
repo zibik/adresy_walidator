@@ -40,7 +40,7 @@ throwWarning: tr("Nadmiarowe spacje w adresie");
 }
 
 
-*[addr:street]["addr:housenumber" *= "996"], *["addr:housenumber" *= "b.n."], *["addr:housenumber" *= "brak"], *["addr:housenumber" *= "brak_nr"]  {
+*["addr:housenumber" *= "996"], *["addr:housenumber" *= "b.n."], *["addr:housenumber" *= "brak"], *["addr:housenumber" *= "brak_nr"]  {
   throwWarning: tr("Prawdopodobnie nieprawidłowy numer domu");
 }
 
