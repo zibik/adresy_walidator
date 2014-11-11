@@ -18,6 +18,10 @@ way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|d
   throwWarning: tr("Niepoprawna kolejność nazwisk");
 }
 
+*[name *= "Szopena"], *["addr:street" *= "Szopena"]   {
+  throwWarning: tr("Niepoprawna forma nazwiska");
+}
+
 *["addr:street" =~ /(?iu)(\s+)[.]? /] {
 throwWarning: tr("Nadmiarowe spacje w adresie");
 }
