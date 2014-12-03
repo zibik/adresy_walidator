@@ -35,6 +35,10 @@ throwWarning: tr("Nadmiarowe spacje w adresie");
   throwWarning: tr("addr:street nie powinno występować z addr:place");
   }
 
+*[addr:street][teryt:simc][addr:housenumber] {
+  throwWarning: tr("teryt:simc można sobie darować w miastach");
+  }
+
 *["addr:country" *= "PL"]   {
   throwWarning: tr("Nadmiarowy tag addr:country");
 }
