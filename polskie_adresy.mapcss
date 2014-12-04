@@ -1,8 +1,8 @@
-way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr)[.]? .*$/] {
+way[highway][name =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr)[.]? .*$/] {
   throwWarning: tr("Skrót w nazwie ulicy");
 }
 
-*["addr:street" =~ /(?i)(marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr)[.]? .*$/] {
+*["addr:street" =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr)[.]? .*$/] {
   throwWarning: tr("Skrót w nazwie ulicy (adresie)");
 }
 
@@ -33,10 +33,6 @@ throwWarning: tr("Nadmiarowe spacje w adresie");
   
 *[addr:street][addr:place][addr:housenumber] {
   throwWarning: tr("addr:street nie powinno występować z addr:place");
-  }
-
-*[addr:street][teryt:simc][addr:housenumber] {
-  throwWarning: tr("teryt:simc można sobie darować w miastach");
   }
 
 *["addr:country" *= "PL"]   {
