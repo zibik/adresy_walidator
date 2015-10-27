@@ -1,8 +1,8 @@
-way[highway][name =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr|sz|cz)[.]? .*$/] {
+way[highway][name =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr|sz|cz|rtm)[.]? .*$/] {
   throwWarning: tr("Skrót w nazwie ulicy");
 }
 
-*["addr:street" =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr|sz|cz)[.]? .*$/] {
+*["addr:street" =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr|sz|cz|rtm)[.]? .*$/] {
   throwWarning: tr("Skrót w nazwie ulicy (adresie)");
 }
 
