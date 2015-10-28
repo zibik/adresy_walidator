@@ -1,8 +1,8 @@
-way[highway][name =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr|sz|cz|rtm)[.]? .*$/] {
+way[highway][name =~ /(?i)[^ ](bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr|sz|cz|rtm)[.]?[$ ]/] {
   throwWarning: tr("Skrót w nazwie ulicy");
 }
 
-*["addr:street" =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr|sz|cz|rtm)[.]? .*$/] {
+*["addr:street" =~ /(?i)[^ ](bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr|sz|cz|rtm)[.]?[$ ]/] {
   throwWarning: tr("Skrót w nazwie ulicy (adresie)");
 }
 
@@ -10,6 +10,10 @@ way[highway][name =~ /(?i)(bł|marsz|ks|gen|inż|prof|kard|al|pl|ul|bp|płk|ppł
   throwWarning: tr("Skrót imienia w nazwie ulicy");
 }
  
+*["addr:street" =~ /(?i)[^ ][A-Ż]\.[$ ]/] {
+  throwWarning: tr("Skrót imienia w nazwie ulicy");
+}
+
 *[name *= "-go "], *["addr:street" *= "-go "]   {
   throwWarning: tr("Niewłaściwa forma liczebnika");
 }
