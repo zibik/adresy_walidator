@@ -1,15 +1,20 @@
-way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr)[.]? .*/] {
+way[highway][name =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr)[.]? .*$/] {
   throwWarning: tr("Skrót w nazwie ulicy");
 }
 
-*["addr:street" =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr)[.]? .*/] {
+*["addr:street" =~ /(?i)(marsz|ks|gen|inż|prof|kard|pl|ul|bp|płk|ppłk|kpt|dr|św|os|mjr)[.]? .*$/] {
   throwWarning: tr("Skrót w nazwie ulicy (adresie)");
 }
 
 *["addr:street" =~ /(?i)(^[A-Ż])[.]? /] {
   throwWarning: tr("Skrót imienia w nazwie ulicy");
 }
- 
+
+*[name *= "."], *["addr:street" *= "."]   {
+  throwWarning: tr("Prawdopodobnie użyty skrót");
+}
+
+
 *[name *= "-go "], *["addr:street" *= "-go "]   {
   throwWarning: tr("Niewłaściwa forma liczebnika");
 }
